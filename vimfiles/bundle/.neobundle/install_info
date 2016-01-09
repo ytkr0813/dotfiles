@@ -1,0 +1,2 @@
+3.0
+{'molokai': {'checked_time': 1452336392, 'installed_uri': 'https://github.com/tomasr/molokai.git', 'installed_path': '/Users/Takeru/.vim/bundle/molokai', 'revisions': {'1447244265': 'c67bdfcdb31415aa0ade7f8c003261700a885476'}, 'updated_time': '1447244265'}, 'neobundle.vim': {'checked_time': 1452336533, 'installed_uri': 'https://github.com/Shougo/neobundle.vim.git', 'installed_path': '/Users/Takeru/.vim/bundle/neobundle.vim', 'revisions': {}, 'updated_time': '1451871872'}}
