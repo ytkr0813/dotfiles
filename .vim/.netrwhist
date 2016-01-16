@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/Takeru/myapp/app/models'
+let g:netrw_dirhist_2='/Users/Takeru/minsyaku/db/migrate'
+let g:netrw_dirhist_3='/Users/Takeru/pixta/app/helpers'
+let g:netrw_dirhist_4='/Users/Takeru/pixta/app'
+let g:netrw_dirhist_5='/Users/Takeru/pixta'
+let g:netrw_dirhist_6='/Users/Takeru/Documents'
+let g:netrw_dirhist_7='/Users/Takeru'
+let g:netrw_dirhist_8='/Users'
+let g:netrw_dirhist_9='/Users/Takeru/Documents/pixtabook/app/models'
