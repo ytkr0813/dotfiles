@@ -1,0 +1,21 @@
+# まずは全部ignore
+/*
+/.*
+# 管理対象にしたいファイルだけignoreから除外
+!/Library/Application Support/KeyRemap4MacBook/*.xml
+!/bin
+!/vimfiles
+!/.gitconfig
+!/.gitignore
+!/.gvimrc
+!/.screenrc
+!/.tmux.conf
+!/.vimperatorrc
+!/.vimrc
+!/.zshenv
+!/.zshrc
+!/dot.nodoka
+# 管理対象のディレクトリ内でも除外したいものはこの下に追加する
+.DS_Store
+*.pyc
+.netrwhist
