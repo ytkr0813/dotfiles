@@ -1,51 +1,11 @@
-set encoding=utf8
-set number
-colorscheme monokai
-vnoremap <silent> > >gv
-vnoremap <silent> < <gv
-set shiftwidth=2
-set tabstop=2
-set clipboard=unnamed
-" カーソル行をハイライト
-set cursorline
-" カーソル列をハイライト
-set cursorcolumn
-" 検索結果ハイライト
-set hlsearch
-" 新しい行のインデントを現在行と同じにする
-set autoindent
-set completeopt=menuone
- "補完機能
-for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
-  exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
-endfor
-" タブをスペース化
-set expandtab
-" コマンド表示
-set showcmd
-" タブ、空白、改行の可視化 キモいので一旦置いておく
-" set list
-" set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
-
-" 全角スペースをハイライト表示
-function! ZenkakuSpace()
-  highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
-endfunction
-
-if has('syntax')
-  augroup ZenkakuSpace
-    autocmd!
-    autocmd ColorScheme       * call ZenkakuSpace()
-    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
-  augroup END
-  call ZenkakuSpace()
-endif
+" 挙動を vi 互換ではなく、Vim のデフォルト設定に
+set nocompatible
+" 一旦ファイルタイプ関連を無効化する
+filetype plugin indent off
 
 """""""""""""""""""""""""""
 " プラグイン 
 """""""""""""""""""""""""""
-set nocompatible
-filetype plugin indent off
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
@@ -105,5 +65,60 @@ autocmd QuickFixCmdPost *grep* cwindow
 " ステータス行に現在のgitブランチを表示する
 set statusline+=%{fugitive#statusline()}
 
+""""""""""""""""""""""""""""""
+" 各種オプション
+""""""""""""""""""""""""""""""
+set encoding=utf8
 set t_Co=256
 syntax on
+set number
+set clipboard=unnamed
+set completeopt=menuone
+colorscheme monokai
+vnoremap <silent> > >gv
+vnoremap <silent> < <gv
+" vimが挿入するインデントの幅
+set shiftwidth=2
+" タブ文字の表示幅
+set tabstop=2
+" スワップファイルは使わない
+set noswapfile
+" カーソルが何行目の何列目に置かれているかを表示する
+set ruler
+" ウインドウのタイトルバーにファイルのパス情報等を表示する
+set title
+" カーソル行をハイライト
+set cursorline
+" カーソル列をハイライト
+set cursorcolumn
+" 検索結果ハイライト
+set hlsearch
+" 新しい行のインデントを現在行と同じにする
+set autoindent
+" 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
+set smartindent
+ "補完機能
+for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
+  exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
+endfor
+" タブをスペース化
+set expandtab
+" コマンド表示
+set showcmd
+" タブ、空白、改行の可視化 キモいので一旦置いておく
+" set list
+" set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
+
+" 全角スペースをハイライト表示
+function! ZenkakuSpace()
+  highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
+endfunction
+
+if has('syntax')
+  augroup ZenkakuSpace
+    autocmd!
+    autocmd ColorScheme       * call ZenkakuSpace()
+    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+  augroup END
+  call ZenkakuSpace()
+endif
